@@ -1,3 +1,4 @@
+
 #include <Adafruit_MotorShield.h>
 #include <SoftwareSerial.h>
 #include <Wire.h>
@@ -9,7 +10,7 @@ Adafruit_DCMotor *myMotor3 = AFMS.getMotor(3);
 Adafruit_DCMotor *myMotor4 = AFMS.getMotor(4);
 SoftwareSerial Genotronex(10,11); //(Tx,Rx)
 
-int motorSpeed = 250;
+int motorSpeed = 1000;
 
 void setup() {
   // put your setup code here, to run once:
@@ -26,12 +27,13 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  
-  if(Serial.available() > 0){
+//  
+  if(true){
     char control = Genotronex.read();
     //Check for no button press value of control!!!
     Serial.print("Control:");
     Serial.println(control);
+
 
     if(control == 'u'){ //Move forward
       myMotor4->run(FORWARD);
@@ -52,6 +54,8 @@ void loop() {
     else if(control == 'x'){ //Stop rover movement
       myMotor4->run(RELEASE);
       myMotor2->run(RELEASE);
+      myMotor3->run(RELEASE);
+      myMotor1->run(RELEASE);
     }
     
     else if(control == 'i'){ //Fold rover arms in
@@ -62,13 +66,14 @@ void loop() {
       myMotor3->run(BACKWARD);
       myMotor1->run(FORWARD);
     }
-    else if(control == 's'){ //Stop folding proccess
-      myMotor3->run(RELEASE);
-      myMotor1->run(RELEASE);
-    }
     else{
-      
     }
   }
   delay(50);
 }
+  
+//    if(control == 'u'){ //Move forward
+//      myMotor2->run(FORWARD);
+//    }
+//  }
+//}
