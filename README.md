@@ -23,5 +23,5 @@ To run the project:
   10. You should now be able to verify and upload the code to the arduino board.
   11. Once successfull upload is complete, setup the follow hardware environment: <img src="imgs/hardware_setup.jpg" width="500">
   12. Now the rover setup is complete and all we need is to setup control.
-  13. Go to this link: https://gallery.appinventor.mit.edu/?galleryid=14a3d907-13eb-4963-bf25-39dcbc8997cf and click **Add project to studio** then go Build -> App (provide QR code for .apk)
+  13. Go to this link: https://gallery.appinventor.mit.edu/?galleryid=14a3d907-13eb-4963-bf25-39dcbc8997cf and click **Load App Into MIT App Inventor** then go Build -> App (provide QR code for .apk)
   14. Download the app and you should be abble to BT connect to the rover computer system.
